@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Menu</title>
+        <link rel="stylesheet" href="indexx.css">
+        <script src="menu.js"></script>
+
+        <style>
+            /* Main menu section styling */
+            .menu-section {
+                padding: 20px;
+                margin-left: 6%;
+                margin-top: auto;
+                width: 72%;
+            }
+
+            /* Grid layout for menu items */
+            .menu-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+                padding: 20px;
+                margin: 3rem auto;
+            }
+
+            /* Individual menu item styling */
+            .menu-item {
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                overflow: hidden;
+                text-align: center;
+                padding: 16px;
+                background-color: #fff;
+                transition: box-shadow 0.3s;
+            }
+
+            .menu-item:hover {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .menu-button {
+                background-color: #3b5bfd;
+                color: white;
+                border: none;
+                padding: 10px 16px;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            .menu-button:hover {
+                background-color: rgb(0, 119, 255);
+                transform: scale(1.05);
+                box-shadow: 0 2px 8px rgba(59, 91, 253, 0.3);
+            }
+
+            .menu-button:focus {
+                background-color: #2541b2;
+                color: #fff;
+            }
+
+            /* Fixed taskbar for quick navigation */
+            .taskbar {
+                position: fixed;
+                top: 50%;
+                right: 5%;
+                transform: translateY(-50%);
+                background: #3b5bfd;
+                color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(59,91,253,0.2);
+                padding: 10px 0;
+                width: 13%;
+                max-height: 70%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                z-index: 0;
+            }
+
+            .menu-item img {
+                width: auto;
+                height: 130px;
+                border-radius: 8px;
+                transition: transform 0.3s;
+            }
+            
+            .menu-item img:hover {
+                transform: scale(1.05);
+                transition: transform 0.3s;
+            }
+
+            /* Taskbar button styles */
+            .taskbar button {
+                background: #fff;
+                border: none;
+                color: #3b5bfd;
+                padding: 12px 24px;
+                cursor: pointer;
+                font-size: 17px;
+                width: 90%;
+                text-align: center;
+                border-radius: 6px;
+                font-weight: bold;
+                box-shadow: 0 2px 8px rgba(59,91,253,0.08);
+                margin: 0 auto;
+                transition: background-color 0.3s, transform 0.3s;
+            }
+
+            .taskbar button:hover {
+                background: ghostwhite;
+                transform: scale(1.05);
+                box-shadow: 0 2px 8px rgba(59,91,253,0.2);
+            }
+
+            .menu-title {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+                text-align: center;
+            }
+        </style>
+
+    </head>
+    <body>
+        <!-- Navbar -->
+    <header>
+        <!-- Logo and Home Link -->
+        <a href="index.html" class="logo">
+            Domino's
+            <img src="images/domino.png" alt="Logo" style="height:32px;">
+        </a>
+        <!-- Search Bar -->
+        <form class="search-bar" role="search">
+            <input type="text" placeholder="Search..." aria-label="Search">
+            <button type="submit" aria-label="Search">
+            </button>
+        </form>
+        <!-- Navigation Links -->
+        <nav id="navbar">
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About us</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+        <main>
+            <section class="menu-section">
+                <h1 class="menu-title">Our Menu</h1>
+                <div class="menu-items">
+                </br></br>
+                    <!-- Pizzas Section -->
+                    <h2>Pizzas</h2>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <img src="images/pepperoni.jpg" alt="Pepperoni Pizza">
+                            <h3>Pepperoni Pizza</h3>
+                            <p>Lots and lots of pepperoni topped with an extra layer of cheese.</p>
+                            <span class="price">$12.99</span>
+                            <button class="menu-button" onclick="addToCart('Pepperoni Pizza', 12.99)">Add to Cart <span>&#10095;</span></button>
+                            <br>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="images/veggie.jpg" alt="Veggie Pizza">
+                            <h3>Veggie Pizza</h3>
+                            <p>Fresh green peppers, fresh mushrooms, fresh onions, and black olives topped with an extra layer of cheese.</p>
+                            <span class="price">$11.99</span>
+                            <button class="menu-button" onclick="addToCart('Veggie Pizza', 11.99)">Add to Cart <span>&#10095;</span></button>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="images/deluxe.jpg" alt="Deluxe Pizza">
+                            <h3>Deluxe Pizza</h3>
+                            <p>A mouth-watering combination of pepperoni, savory Italian sausage, fresh green peppers, fresh mushrooms, fresh onions and cheese.</p>
+                            <span class="price">$14.99</span>
+                            <button class="menu-button" onclick="addToCart('Deluxe Pizza', 14.99)">Add to Cart <span>&#10095;</span></button>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="images/meat.jpg" alt="Meat Lovers Pizza">
+                            <h3>Meat Lovers Pizza</h3>
+                            <p>Slice after slice of pepperoni, ham, savory Italian sausage and beef crumble topped with an extra layer of cheese.</p>
+                            <span class="price">$13.99</span>
+                            <button class="menu-button" onclick="addToCart('Meat Lovers Pizza', 13.99)">Add to Cart <span>&#10095;</span></button>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="images/brooklyn.jpg" alt="Brooklyn Pizza">
+                            <h3>Brooklyn Style Pizza</h3>
+                            <p>Specifically engineered to be big, thin, and perfectly foldable.</p>
+                            <span class="price">$15.99</span>
+                            <button class="menu-button" onclick="addToCart('Brooklyn Style Pizza', 15.99)">Add to Cart <span>&#10095;</span></button>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="images/cheese.jpg" alt="Cheese Pizza">
+                            <h3>Cheese Pizza</h3>
+                            <p>Covered with Feta, provolone, cheddar, Parmesan-Asiago, and mozzarella cheese finished with a sprinkle of oregano</p>
+                            <span class="price">$10.99</span>
+                            <button class="menu-button" onclick="addToCart('Cheese Pizza', 10.99)">Add to Cart <span>&#10095;</span></button>
+                        </div>
+                    </div>
+
+                    <!-- Breads Section -->
+                    <h2>Breads</h2>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <img src="images/garlic bread.jpg" alt="Garlic Bread">
+                            <h3>Garlic Bread</h3>
+                            <p>Freshly baked bread with garlic and herbs.</p>
+                            <span class="price">$4.99</span>
+                            <button class="menu-button" onclick="addToCart('Garlic Bread', 4.99)">Add to Cart <span>&#10095;</span></button>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="images/cheesestick.jpg" alt="Cheese Sticks">
+                            <h3>Cheese Sticks</h3>
+                            <p>Soft breadsticks topped with melted cheese.</p>
+                            <span class="price">$5.99</span>
+                            <button class="menu-button" onclick="addToCart('Cheese Sticks', 5.99)">Add to Cart <span>&#10095;</span></button>
+                        </div>
+                    </div>
+
+                    <!-- Desserts Section -->
+                    <h2>Desserts</h2>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <img src="images/choco.jpg" alt="Chocolate Brownie">
+                            <h3>Chocolate Brownie</h3>
+                            <p>Satisfy your sweet tooth! Taste the decadent blend of gooey milk chocolate chunk cookie and delicious fudge brownie.
+                                Oven-baked to perfection and cut into 6 pieces - this dessert is perfect to share with the whole group.</p>
+                            <span class="price">$3.99</span>
+                            <button class="menu-button" onclick="addToCart('Chocolate Brownie', 3.99)">Add to Cart <span>&#10095;</span></button>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="images/cinnastix.jpg" alt="Cinnastix">
+                            <h3>Cinnastix</h3>
+                            <p>Sprinkled with cinnamon and sugar, then baked to perfection. Served with sweet icing.</p>
+                            <span class="price">$4.49</span>
+                            <button class="menu-button" onclick="addToCart('Cinnastix', 4.49)">Add to Cart <span>&#10095;</span></button>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="images/lava.jpg" alt="Lava Cake">
+                            <h3>Chocolate Lava Crunch Cake</h3>
+                            <p>Oven baked chocolate cakes, crunchy on the outside with molten chocolate on the inside.</p>
+                            <span class="price">$4.99</span>
+                            <button class="menu-button" onclick="addToCart('Chocolate Lava Crunch Cake', 4.99)">Add to Cart <span>&#10095;</span></button>
+                        </div>
+                    </div>
+
+                    <!-- Beverages Section -->
+                    <h2>Beverages</h2>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <img src="images/coke.jpg" alt="Coke">
+                            <h3>Coke</h3>
+                            <p>caned Coke.</p>
+                            <span class="price">$1.99</span>
+                            <button class="menu-button" onclick="addToCart('Coke', 1.99)">Add to Cart <span>&#10095;</span></button>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <img src="images/sprite.jpg" alt="Sprite">
+                            <h3>Sprite</h3>
+                            <p>caned Sprite.</p>
+                            <span class="price">$1.99</span>
+                            <button class="menu-button" onclick="addToCart('Sprite', 1.99)">Add to Cart <span>&#10095;</span></button>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="images/water.jpg" alt="Water">
+                            <h3>Dansani Water</h3>
+                            <p>Bottled water with a proprietary blend of minerals for a pure, fresh taste</p>
+                            <span class="price">$1.49</span>
+                            <button class="menu-button" onclick="addToCart('Dansani Water', 1.49)">Add to Cart <span>&#10095;</span></button>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="images/fanta.jpg" alt="Fanta">
+                            <h3>Fanta</h3>
+                            <p>A refreshing carbonated soft drink made with Real Fruit.</p>
+                            <span class="price">$1.99</span>
+                            <button class="menu-button" onclick="addToCart('Fanta', 1.99)">Add to Cart <span>&#10095;</span></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside>
+            <!-- Taskbar for quick section navigation -->
+            <div class="taskbar">
+                <button class="pizza"       onclick="document.getElementById('pizzas').     scrollIntoView({behavior:'smooth'});">Pizza</button>
+                <button class="breads"      onclick="document.getElementById('breads').     scrollIntoView({behavior:'smooth'});">Breads</button>
+                <button class="desserts"    onclick="document.getElementById('desserts').   scrollIntoView({behavior:'smooth'});">Desserts</button>
+                <button class="beverages"   onclick="document.getElementById('beverages').  scrollIntoView({behavior:'smooth'});">Beverages</button>
+
+                <button class="cart-button" onclick="showCart()">Cart (<span id="cart-count">0</span>)</button>
+            </div>
+        </aside>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector('h2:nth-of-type(1)').id = 'pizzas';
+                document.querySelector('h2:nth-of-type(2)').id = 'breads';
+                document.querySelector('h2:nth-of-type(3)').id = 'desserts';
+                document.querySelector('h2:nth-of-type(4)').id = 'beverages';
+            });
+        </script>
+
+            <!-- Footer -->
+        <footer>
+            <div>
+                <br>
+                    <p>&copy; 2025 Domino’s. All rights reserved.</p>
+                    <p class="contact">
+                        Contact us:
+                        <a href="tel:+1234567890">+1 (234) 567-890</a> |
+                        <a href="mailto:info@dominos.com">info@dominos.com</a> |
+                        <a href="contact.html">Form</a>
+                    </p>
+                    <ul class="social-media">
+                        <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
+                        <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.youtube.com" target="_blank">YouTube</a></li>
+                    </ul>
+                <br>
+            </div>
+        </footer>
+    </body>
+</html>

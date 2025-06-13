@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="indexx.css">
+
+
+    <style>
+        /* Contact form container styles */
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 350px;
+            padding: 20px;
+            border-radius: 20px;
+            position: relative;
+            background: linear-gradient(90deg, #1e3c72 60%, #2a5298 100%);
+            color: #fff;
+            border: 1px solid #2a5298;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            margin: 40px auto;
+        }
+
+        /* Form title styles */
+        .title {
+            font-size: 28px;
+            font-weight: 600;
+            letter-spacing: -1px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-left: 30px;
+            color: #fff;
+        }
+
+        /* Signin link styles */
+        .signin a {
+            color: #fff;
+        }
+
+        /* Flex container for first and last name */
+        .flex {
+            display: flex;
+            width: 100%;
+            gap: 6px;
+        }
+
+        /* Label positioning */
+        .form label {
+            position: relative;
+        }
+
+        /* Input field styles */
+        .form label .input {
+            background-color: #f4f8ff;
+            color: #1e3c72;
+            width: 100%;
+            padding: 20px 5px 5px 10px;
+            outline: 0;
+            border: 1px solid #2a5298;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Floating label styles */
+        .form label .input + span {
+            color: #2a5298;
+            position: absolute;
+            left: 10px;
+            top: 0px;
+            font-size: 0.9em;
+            cursor: text;
+            transition: 0.3s ease;
+        }
+
+        /* Label position when placeholder is shown */
+        .form label .input:placeholder-shown + span {
+            top: 12.5px;
+            font-size: 0.9em;
+        }
+
+        /* Label position when input is focused or valid */
+        .form label .input:focus + span,
+        .form label .input:valid + span {
+            color: #1e3c72;
+            top: 0px;
+            font-size: 0.7em;
+            font-weight: 600;
+        }
+
+        .input {
+            font-size: medium;
+        }
+
+        /* Submit button styles */
+        .submit {
+            border: none;
+            outline: none;
+            padding: 10px;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            transition: background 0.3s;
+            background-color: #2a5298;
+        }
+
+        .submit:hover {
+            background-color: #1e3c72;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <!-- Logo and home link -->
+        <a href="index.html" class="logo">
+            Domino's
+            <img src="images/domino.png" alt="Logo" style="height:32px;">
+        </a>
+        <!-- Search bar -->
+        <form class="search-bar" role="search">
+            <input type="text" placeholder="Search..." aria-label="Search">
+            <button type="submit" aria-label="Search">
+            </button>
+        </form>
+        <!-- Navigation links -->
+        <nav id="navbar">
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About us</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <br><br><br>
+    
+    <!-- Contact form -->
+    <form class="form">
+        <p class="title">Contact us</p>
+        <div class="flex">
+            <!-- First name input -->
+            <label>
+                <input class="input" type="text" placeholder="" pattern="[A-Za-z]+" required="">
+                <span>First name</span>
+            </label>
+            <!-- Last name input -->
+            <label>
+                <input class="input" type="text" placeholder="" pattern="[A-Za-z]+" required="">
+                <span>Last name</span>
+            </label>
+        </div>
+        
+        <!-- dropdown -->
+        <label>
+            <select class="input" required>
+                <option value="">Select an option</option>
+                <option value="general">General Inquiry</option>
+                <option value="order">Order Issue</option>
+                <option value="feedback">Feedback</option>
+                <option value="careers">Careers</option>
+                <option value="other">Other</option>
+            </select>
+            <span>Subject</span>
+        </label>
+        <!-- Email input -->
+        <label>
+            <input class="input" type="email" placeholder="" required>
+            <span>Email</span>
+        </label> 
+        <!-- Phone number input -->
+        <label>
+            <input class="input" type="tel" placeholder="" required pattern="[0-9]*" maxlength="10">
+            <span>Phone number</span>
+        </label>
+        <!-- Message textarea -->
+        <label>
+            <textarea class="input" placeholder="" required style="resize: vertical; font-size: medium;"></textarea>
+            <span>Message</span>
+        </label>
+        <!-- Submit button -->
+        <button class="submit" type="submit">Submit</button>
+        <!-- Contact form JavaScript -->
+        <script src="contact.js"></script>
+    </form>
+
+    <br><br><br>
+        <!-- Footer -->
+        <footer>
+            <div>
+                <br>
+                    <p>&copy; 2025 Domino’s. All rights reserved.</p>
+                    <p class="contact">
+                        Contact us:
+                        <a href="tel:+1234567890">+1 (234) 567-890</a> |
+                        <a href="mailto:info@dominos.com">info@dominos.com</a> |
+                        <a href="contact.html">Form</a>
+                    </p>
+                    <ul class="social-media">
+                        <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
+                        <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.youtube.com" target="_blank">YouTube</a></li>
+                    </ul>
+                <br>
+            </div>
+        </footer>
+    </body>
+</html>

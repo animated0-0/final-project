@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="indexx.css">
+
+    <style>
+        /* Section styling */
+        .section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 20px;
+            margin: 40px auto;
+            max-width: 1100px;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(30, 41, 59, 0.08);
+        }
+        /* Alternate section backgrounds and directions */
+        .section:nth-child(even) {
+            flex-direction: row-reverse;
+            background: linear-gradient(90deg, #e0e7ff 0%, #f8fafc 100%);
+        }
+
+        .section:nth-child(odd) {
+            flex-direction: row;
+            background: linear-gradient(90deg,#f8fafc 100, #e0e7ff 0%);
+        }
+        /* Section text styling */
+        .section-text {
+            flex: 1 1 350px;
+            min-width: 300px;
+            max-width: 500px;
+        }
+        .section-text h1 {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+            color: #3b5bfd;
+            letter-spacing: 1px;
+        }
+        .section-text p, .section-text ul {
+            font-size: 1.08rem;
+            margin-bottom: 16px;
+        }
+        .section-text ul {
+            padding-left: 20px;
+        }
+        /* Section image styling */
+        .section img {
+            max-width: 340px;
+            width: 100%;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(59, 91, 253, 0.10);
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .section img:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <a href="index.html" class="logo">Domino's <img src="images/domino.png" alt="Logo" style="height:32px;"></a>
+        <form class="search-bar" role="search">
+            <input type="text" placeholder="Search..." aria-label="Search">
+            <button type="submit" aria-label="Search">
+            </button>
+        </form>
+        <nav id="navbar">
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About us</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Section 1: pizza -->
+    <section class="section">
+        <div class="section-text">
+            <h1>Fresh, Hot, and Delivered Fast</h1>
+            <p>Craving pizza? Domino’s brings your favorite slices straight to your door—piping hot and made just the way you like it.</p>
+        </div>
+        <img src="images/freshpiza.jpg" alt="Fresh Pizza">
+    </section>
+
+    <!-- Section 2: About Domino’s -->
+    <section class="section">
+        <div class="section-text">
+            <h1>About Domino’s</h1>
+            <p>Since 1960, Domino’s has been delivering more than just pizza—we deliver smiles, comfort, and convenience. With thousands of locations worldwide, we’re committed to fast service, quality ingredients, and mouthwatering innovation.</p>
+            <p>From our iconic pepperoni to loaded cheesy bread and lava cakes, Domino’s has something for everyone. Whether you're ordering for one or a whole party, we've got you covered.</p>
+        </div>
+        <img src="images/store.jpg" alt="Domino's Store">
+    </section>
+
+    <!-- Section 3: Fan Favorites -->
+    <section class="section">
+        <div class="section-text">
+            <h1>Fan Favorites</h1>
+            <ul>
+                <li><strong>Classic Pepperoni:</strong> A timeless favorite, loaded with mozzarella and spicy pepperoni.</li>
+                <li><strong>Deluxe Feast:</strong> Packed with pepperoni, sausage, peppers, and mushrooms.</li>
+                <li><strong>Vegan Margherita:</strong> 100% plant-based with dairy-free cheese and tangy tomato sauce.</li>
+                <li><strong>Cheesy Bread:</strong> Golden-baked dough filled with gooey cheese and brushed with garlic butter.</li>
+            </ul>
+        </div>
+        <img src="images/pizzaa.jpg" alt="Fan Favorites">
+    </section>
+
+    <!-- Section 4: Lightning Fast Delivery -->
+    <section class="section">
+        <div class="section-text">
+            <h1>Lightning Fast Delivery</h1>
+            <p>Track your order in real-time with the Domino’s Tracker and get your food faster than ever. Choose carryout or delivery—whatever fits your night best.</p>
+            <p>Ordering is easy via app, web, or voice. Hungry yet?</p>
+        </div>
+        <img src="images/delivery.jpg" alt="Delivery">
+    </section>
+
+    <!-- Section 5: Your Pizza. Your Way. -->
+    <section class="section">
+        <div class="section-text">
+            <h1>Your Pizza. Your Way.</h1>
+            <p>Customize your pizza, pick your crust, choose your toppings, and let us handle the rest. Great taste is just a click away.</p>
+        </div>
+        <img src="images/pizzaa.jpg" alt="Customize Pizza">
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <br>
+                <p>&copy; 2025 Domino’s. All rights reserved.</p>
+                <p class="contact">
+                    Contact us:
+                    <a href="tel:+1234567890">+1 (234) 567-890</a> |
+                    <a href="mailto:info@dominos.com">dominos@dominos.com</a> |
+                    <a href="contact.html">Form</a>
+                </p>
+                <ul class="social-media">
+                    <li>
+                        <a href="https://www.facebook.com" target="_blank"></a>
+                    <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
+                    <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.youtube.com" target="_blank">YouTube</a></li>
+                </ul>
+            <br>
+        </div>
+    </footer>
+</body>
+</html>
